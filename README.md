@@ -31,5 +31,5 @@ A research tool where you can input a bunch of article URLs and ask questions. T
 
 ### 1. Clone the repository
 ```bash
-git clone https://github.com/yourusername/llm-news-research-tool.git
-cd llm-news-research-tool
+git clone https://github.com/ShwetaPardhi0/LLM-News-Research-Tool.git
+cd LLM-News-Research-Tool
