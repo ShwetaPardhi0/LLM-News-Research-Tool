@@ -12,7 +12,7 @@ from langchain.vectorstores import FAISS
 from dotenv import load_dotenv
 load_dotenv()  # take environment variables from .env (especially openai api key)
 
-st.title("RockyBot: News Research Tool 📈")
+st.title("NewsBot: News Research Tool 📈")
 st.sidebar.title("News Article URLs")
 
 urls = []
@@ -65,4 +65,5 @@ if query:
                 st.subheader("Sources:")
                 sources_list = sources.split("\n")  # Split the sources by newline
                 for source in sources_list:
+
                     st.write(source)
