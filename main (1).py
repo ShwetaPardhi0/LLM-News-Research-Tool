@@ -12,7 +12,7 @@ from langchain.vectorstores import FAISS
 from dotenv import load_dotenv
 load_dotenv()  # take environment variables from .env (especially openai api key)
 
-st.title("NewsBot: News Research Tool 📈")
+st.title("NewsBot: News Research Tool ")
 st.sidebar.title("News Article URLs")
 
 urls = []
@@ -29,19 +29,19 @@ llm = OpenAI(temperature=0.9, max_tokens=500)
 if process_url_clicked:
     # load data
     loader = UnstructuredURLLoader(urls=urls)
-    main_placeholder.text("Data Loading...Started...✅✅✅")
+    main_placeholder.text("Data Loading...Started...")
     data = loader.load()
     # split data
     text_splitter = RecursiveCharacterTextSplitter(
         separators=['\n\n', '\n', '.', ','],
         chunk_size=1000
     )
-    main_placeholder.text("Text Splitter...Started...✅✅✅")
+    main_placeholder.text("Text Splitter...Started...")
     docs = text_splitter.split_documents(data)
     # create embeddings and save it to FAISS index
     embeddings = OpenAIEmbeddings()
     vectorstore_openai = FAISS.from_documents(docs, embeddings)
-    main_placeholder.text("Embedding Vector Started Building...✅✅✅")
+    main_placeholder.text("Embedding Vector Started Building...")
     time.sleep(2)
 
     # Save the FAISS index to a pickle file
